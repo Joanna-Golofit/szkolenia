@@ -16,7 +16,7 @@
       width: 100px;
       height: 100px;
       border-radius: 5px;
-      transform: translate(0px, 0px);
+      transform: scale(1);
     }
 
     .box:nth-child(1) {
@@ -38,18 +38,11 @@
 
 <body>
   <p>
-    <label for="translateX">Oś X:</label>
-    <input type="text" id="translateX" readonly style="border:0; color:#f6931f; font-weight:bold;">
+    <label for="amount">Skala:</label>
+    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
   </p>
 
-  <div id="slider-translateX"></div>
-
-  <p>
-    <label for="translateY">Oś Y:</label>
-    <input type="text" id="translateY" readonly style="border:0; color:#f6931f; font-weight:bold;">
-  </p>
-
-  <div id="slider-translateY"></div>
+  <div id="slider-range-min"></div>
 
   <div class="container">
     <div class="box"></div>
@@ -58,34 +51,19 @@
 
   <script>
     $(function () {
-      $("#slider-translateX").slider({
+      $("#slider-range-min").slider({
         range: "min",
-        value: 0,
-        min: -200,
-        max: 200,
-        step: 1,
+        value: 1,
+        min: 0,
+        max: 3,
+        step: 0.05,
         slide: function (event, ui) {
 
-          $("#box").css({ "transform": "translate(" + ui.value + "px, "+ $("#slider-translateY").slider("value") +"px )" });
-          $("#translateX").val(ui.value);
+          $("#box").css({ "transform": "scale(" + ui.value + ")" });
+          $("#amount").val(ui.value);
         }
       });
-
-      $("#slider-translateY").slider({
-        range: "min",
-        value: 0,
-        min: -200,
-        max: 200,
-        step: 1,
-        slide: function (event, ui) {
-
-          $("#box").css({ "transform": "translate(" + $("#slider-translateX").slider("value")  + "px, "+ ui.value  +"px )" });
-          $("#translateY").val(ui.value);
-        }
-      });
-
-      $("#translateX").val($("#slider-translateY").slider("value"));
-      $("#translateY").val($("#slider-translateX").slider("value"));
+      $("#amount").val($("#slider-range-min").slider("value"));
     });
   </script>
 </body>
