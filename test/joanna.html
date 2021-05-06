@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      li {
+        display: flex;
+        align-items: center;
+      }
+
+       li:hover {
+        font-weight: bold;
+      }
+
+      .kolo {
+        background-color: gray;
+        
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: relative;
+        margin: 5px;
+      }
+
+      .kolko {
+        background-color: lightgreen;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid black;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+
+      .kolo:nth-child(3) {
+        background-image: url("../zajecia_html_czesc_9/images/people/man.jpg");
+        /* background-repeat: no-repeat; */
+        background-size: cover;
+      }
+
+      h1 {
+        display: flex;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <h1>Sticky</h1>
+    <div>
+      <ul>
+        <li>
+          <div class="kolo">
+            <div class="kolko"></div>
+          </div>
+          Jan Kowalski
+        </li>
+        <li>
+          <div class="kolo">
+            <div class="kolko"></div>
+          </div>
+          Adam Dam
+        </li>
+        <li>
+          <div class="kolo">
+            <div class="kolko"></div>
+          </div>
+          Mikołaj Wołaj
+        </li>
+        <li>
+          <div class="kolo">
+            <div class="kolko"></div>
+          </div>
+          Asia Kasia
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
