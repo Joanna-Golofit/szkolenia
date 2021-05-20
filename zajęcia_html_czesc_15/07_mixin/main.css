@@ -1,0 +1,25 @@
+.section-template, .header-template {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.section-template {
+  padding: 20px;
+}
+
+.header-template {
+  min-height: 80px;
+}
+
+.section-mixin {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 20px;
+}
+
+.header-mixin {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  min-height: 80px;
+}
+/*# sourceMappingURL=main.css.map */
