@@ -1,0 +1,31 @@
+%bordered{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.section-template {
+  @extend %bordered;
+  padding: 20px;
+}
+
+.header-template {
+  @extend %bordered;
+  min-height: 80px;
+}
+
+
+@mixin bordered{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  
+  .section-mixin {
+    @include bordered;
+    padding: 20px;
+  }
+  
+  .header-mixin {
+    @include bordered;
+    min-height: 80px;
+  }
+
